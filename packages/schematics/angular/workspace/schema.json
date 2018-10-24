@@ -18,6 +18,11 @@
       "type": "boolean",
       "visible": "false"
     },
+    "karmaParallel": {
+      "description": "Enable parallel test execution in karma tests",
+      "type": "boolean",
+      "default": false
+    },
     "newProjectRoot": {
       "description": "The path where new projects will be created.",
       "type": "string",

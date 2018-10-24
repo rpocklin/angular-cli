@@ -22,6 +22,11 @@
       "type": "boolean",
       "default": false
     },
+    "karmaParallel": {
+      "description": "Specifies if you want to enable parallel test execution in karma tests.",
+      "type": "boolean",
+      "default": false
+    },
     "inlineStyle": {
       "description": "Specifies if the style will be in the ts file.",
       "type": "boolean",

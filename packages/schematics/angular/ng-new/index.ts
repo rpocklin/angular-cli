@@ -41,11 +41,13 @@ export default function (options: NgNewOptions): Rule {
     name: options.name,
     version: options.version,
     experimentalAngularNext: options.experimentalIvy,
+    karmaParallel: options.karmaParallel,
     newProjectRoot: options.newProjectRoot || 'projects',
   };
   const applicationOptions: ApplicationOptions = {
     projectRoot: '',
     name: options.name,
+    karmaParallel: options.karmaParallel,
     experimentalIvy: options.experimentalIvy,
     inlineStyle: options.inlineStyle,
     inlineTemplate: options.inlineTemplate,

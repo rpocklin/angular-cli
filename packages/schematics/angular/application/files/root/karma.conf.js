@@ -2,16 +2,24 @@
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
 module.exports = function (config) {
-  config.set({
+  const frameworks = ['jasmine', '@angular-devkit/build-angular'];
+  const plugins = [
+    require('karma-jasmine'),
+    require('karma-chrome-launcher'),
+    require('karma-jasmine-html-reporter'),
+    require('karma-coverage-istanbul-reporter'),
+    require('@angular-devkit/build-angular/plugins/karma')
+  ];
+  <% if (karmaParallel) { %>
+  const runInParallel = !!config.buildWebpack.options.parallel;
+  console.info('Running in parallel: ' + runInParallel);
+  frameworks.unshift('parallel');
+  plugins.unshift(require('karma-parallel'));
+  <% } %>
+    config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
-    plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
-    ],
+    frameworks,
+    plugins,
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },

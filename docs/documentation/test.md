@@ -62,6 +62,15 @@ You can run tests with coverage via `--code-coverage`. The coverage report will 
   </p>
 </details>
 <details>
+  <summary>parallel</summary>
+  <p>
+    <code>--parallel</code>
+  </p>
+  <p>
+    Enable running tests in parallel (if created with '--karma-parallel')
+  </p>
+</details>
+<details>
   <summary>polyfills</summary>
   <p>
     <code>--polyfills</code>

@@ -164,6 +164,26 @@ describe('Application Schematic', () => {
       expect(packageJson.devDependencies.typescript).toEqual('~2.5.2');
     });
 
+    it(`should add 'karma-parallel' to karma.conf.js when --karmaParallel`, () => {
+      const options = { ...defaultOptions, karmaParallel: true };
+
+      workspaceTree = schematicRunner.runSchematic('workspace', { ...workspaceOptions, karmaParallel: true });
+      const tree = schematicRunner.runSchematic('application', options, workspaceTree);
+
+      const karmaConfig = tree.readContent('/projects/foo/karma.conf.js');
+      expect(karmaConfig).toContain(`require('karma-parallel')`);
+    });
+
+    it(`should add 'karma-parallel' to package.json when --karmaParallel`, () => {
+      const options = { ...defaultOptions, karmaParallel: true };
+
+      workspaceTree = schematicRunner.runSchematic('workspace', { ...workspaceOptions, karmaParallel: true });
+      const tree = schematicRunner.runSchematic('application', options, workspaceTree);
+
+      const packageJson = JSON.parse(tree.readContent('package.json'));
+      expect(packageJson.devDependencies['karma-parallel']).toEqual('^0.3.0');
+    });
+
     it(`should not modify the file when --skipPackageJson`, () => {
       const tree = schematicRunner.runSchematic('application', {
         name: 'foo',

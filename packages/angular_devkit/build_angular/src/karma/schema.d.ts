@@ -34,6 +34,11 @@ export interface KarmaBuilderSchema extends Pick<BrowserBuilderSchema,
   codeCoverageExclude: string[];
 
   /**
+   * Run the tests in parallel (if created with '--karma-parallel').
+   */
+  parallel?: boolean;
+
+  /**
    * Karma reporters to use. Directly passed to the karma runner.
    */
   reporters?: string[];

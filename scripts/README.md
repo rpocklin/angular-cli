@@ -132,6 +132,7 @@ Flags:
 * `--spec-reporter`. Use the spec reporter (instead of the default one).
 * `--glob=<glob string>`. Only run the tests that match the glob pattern.
 * `--code-coverage`. Outputs code coverage for the tests run.
+* `--parallel`. Runs tests in parallel (if created with '--karma-parallel').
 
 ## validate
 

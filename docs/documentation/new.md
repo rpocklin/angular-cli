@@ -59,7 +59,16 @@ Default applications are created in a directory of the same name, with an initia
     <code>--inline-template</code> (alias: <code>-t</code>)
   </p>
   <p>
-    Specifies if the template will be in the ts file.
+    Specifies whether to run karma tests in parallel.
+  </p>
+</details>
+<details>
+  <summary>karma-parallel</summary>
+  <p>
+    <code>--karma-parallel</code>
+  </p>
+  <p>
+    Specifies if you want to enable parallel test execution in karma tests.
   </p>
 </details>
 <details>

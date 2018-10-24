@@ -23,6 +23,11 @@
       "type": "boolean",
       "default": false
     },
+    "karmaParallel": {
+      "description": "Specifies if you want to enable parallel test execution in karma tests.",
+      "type": "boolean",
+      "default": false
+    },
     "skipInstall": {
       "description": "Skip installing dependency packages.",
       "type": "boolean",
